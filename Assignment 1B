@@ -2,22 +2,27 @@
 EVA project 1-- Basics of CNN, Kernels and max pooling
 
 
-1) What are Channels and Kernels (according to EVA)?
+A) What are Channels and Kernels (according to EVA)?
 Kernel/feature extractor/filter is a matrix which when applied on an image, it separates all instances of a particular channel (think edges or arcs).
-1 pea
+It is like a prototype of a particular channel which can be used to separate all instances of the channel. For instance if we want to separate the 
+ingredients of a pea rice bowl. One pea will be a kernel.
 
-Technically,weight matrix in CNN will be a matrix of kernel.
+Technically,weight matrix in CNN will be a kernel.
 
-Channels are Ingredients of an Image.Channels are similar set of image features which can be obtained by applying a convolution kernel. 
+Channels are Ingredients of an Image. They are a similar set of image features which can be obtained by applying a convolution 
+kernel. All the peas, rice grains, gloves etc will be channels in our dish example. 
 
 
-Why should we only (well mostly) use 3x3 Kernels?
+B) Why should we only (well mostly) use 3x3 Kernels?
 
 We would like the kernels to satisfy following 2 properties-
-1) Smaller dimension- This would tantamount to less number of parameters needed to train a CNN. 
-2) Odd and sqare matrix - Odd provides a good symmetry.
+1) Smaller dimension- This would tantamount to less number of parameters needed to train a CNN.For instance in order to get a 
+1*1 output from a 5*5 image by using a 3*3 kernel we will need to apply convolution twice. Instead of 3*3 if we use 5*5 we can 
+get a 1*1 in one convolution operation. However the number of parameters required will be 18 for a 3*3 convolution applied twice 
+compared 25 parameters when 5*5 is applied once. 
+2) Odd dimensional sqare matrix - Odd provides a good symmetry without losing any pixels. 
 
-How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)
+C) How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)
 99 times
 
 Count of operartions	Dimension
